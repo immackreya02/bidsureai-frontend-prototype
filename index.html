@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BidSure AI — GeM Bid Compliance Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div id="login-screen" class="login-screen">
+  <div class="login-panel">
+    <div class="login-brand">
+      <div class="brand-mark">BS</div>
+      <div>
+        <div class="brand-name">BidSure <span>AI</span></div>
+        <div class="brand-sub">GeM Bid Compliance Intelligence</div>
+      </div>
+    </div>
+    <p class="login-tag">AI-assisted compliance verification for GeM tenders. Every check is evidence-backed — the Procurement Officer always makes the final call.</p>
+
+    <form id="login-form" class="login-form">
+      <label class="field">
+        <span>Employee ID / Email</span>
+        <input type="text" id="login-id" placeholder="employee@dept.gov.in" value="p.sharma@dept.gov.in" required>
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="login-pass" placeholder="••••••••" value="••••••••" required>
+      </label>
+      <div class="login-row">
+        <label class="checkbox"><input type="checkbox" checked> Remember this device</label>
+        <a href="#" onclick="return false;">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Login to console</button>
+    </form>
+
+    <div class="login-footnote">Procurement Officer access only · Government e-Marketplace (GeM) verified integration</div>
+  </div>
+  <div class="login-visual">
+    <div class="lv-badge">Tender-Aware AI &middot; Explainable Results</div>
+    <div class="lv-card">
+      <div class="lv-card-head">
+        <span>Live compliance snapshot</span>
+        <span class="pill pill-medium">MEDIUM RISK</span>
+      </div>
+      <div class="lv-score">84<span>/100</span></div>
+      <div class="lv-bars">
+        <div class="lv-bar-row"><span>GST</span><div class="lv-bar"><i style="width:100%;background:var(--pass)"></i></div><span class="pass">PASS</span></div>
+        <div class="lv-bar-row"><span>OEM Authorization</span><div class="lv-bar"><i style="width:20%;background:var(--fail)"></i></div><span class="fail">MISSING</span></div>
+        <div class="lv-bar-row"><span>Make in India</span><div class="lv-bar"><i style="width:60%;background:var(--review)"></i></div><span class="review">REVIEW</span></div>
+      </div>
+    </div>
+    <ul class="lv-points">
+      <li>One-click verification across bidder documents</li>
+      <li>Multi-portal cross-checks: GSTN, EPFO, Udyam, Income Tax</li>
+      <li>Every decision traced to source evidence</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app-shell" class="app-shell hidden">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark small">BS</div>
+      <div class="brand-name small">BidSure <span>AI</span></div>
+    </div>
+    <nav class="side-nav" id="side-nav">
+      <a href="#/dashboard" data-route="dashboard"><i data-icon="grid"></i>Dashboard</a>
+      <a href="#/tenders" data-route="tenders"><i data-icon="doc"></i>Tenders</a>
+      <a href="#/bidders" data-route="bidders"><i data-icon="users"></i>Bidders</a>
+      <a href="#/verification" data-route="verification"><i data-icon="check"></i>Verification</a>
+      <a href="#/risk" data-route="risk"><i data-icon="alert"></i>Risk</a>
+      <a href="#/reports" data-route="reports"><i data-icon="report"></i>Reports</a>
+      <a href="#/audit" data-route="audit"><i data-icon="clock"></i>Audit Trail</a>
+      <a href="#/settings" data-route="settings"><i data-icon="gear"></i>Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="sidebar-officer">
+        <div class="avatar">PS</div>
+        <div>
+          <div class="officer-name">Priya Sharma</div>
+          <div class="officer-role">Procurement Officer</div>
+        </div>
+      </div>
+      <button class="link-btn" id="logout-btn">Log out</button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <div class="topbar-search">
+        <i data-icon="search"></i>
+        <input type="text" id="global-search" placeholder="Search tenders, bidders, GSTIN, PAN…">
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-chip"><i data-icon="link"></i>GeM Portal: <b>Connected</b></div>
+        <button class="icon-btn" title="Notifications"><i data-icon="bell"></i><span class="dot"></span></button>
+        <div class="avatar small">PS</div>
+      </div>
+    </header>
+
+    <main class="view-area" id="view-area">
+      <!-- views injected here -->
+    </main>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="data.js"></script>
+<script src="icons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
