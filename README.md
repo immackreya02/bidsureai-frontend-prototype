@@ -38,7 +38,7 @@ Option 1 — Open directly
 
 Clone the repository:
 
-git clone https://github.com/YOUR-USERNAME/bidsure-ai-prototype.git
+git clone https://github.com/immackreya02/bidsure-ai-prototype.git
 
 Enter the project:
 
